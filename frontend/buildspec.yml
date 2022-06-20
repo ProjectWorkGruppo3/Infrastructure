@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      - nodejs:latest
+      nodejs: latest
     commands:
       - npm i
   pre_build:
@@ -12,8 +12,13 @@ phases:
   build:
     commands:
       - npm run build
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - ls . -al
 
 artifacts:
+  files:
+    - '**/*'
   exclude-paths:
-    - ./build
     - ./node_modules

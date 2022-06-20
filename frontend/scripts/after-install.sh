@@ -1,5 +1,5 @@
 #!/bin/bash
 
-cd /app
-npm install
-npm install pm2 -g
+cd /home/app
+sudo npm install
+sudo npm install pm2 -g
